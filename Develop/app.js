@@ -5,13 +5,17 @@ const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
 
+
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
+
 const render = require("./lib/htmlRenderer");
+
 
 const teamMembers = [];
 const emptyId = [];
+
 
 const questionsEmployee = [
     {
@@ -36,14 +40,16 @@ const questionsEmployee = [
     }
 ];
 
+
 function manager() {
     console.log("Let's build your team!");
-    inquirer.prompt(questionsEmployee).then(function(data) {
+    inquirer.prompt (questionsEmployee).then (function (data) {
         const manager = new Manager(data.nameManager, data.managerId, data.emailManager, data.officeNumber);
         teamMembers.push(manager);
         team();
     });
 };
+
 
 function team() {
     inquirer.prompt([
@@ -65,6 +71,7 @@ function team() {
         }
     });
 };
+
 
 function engineer() {
     inquirer.prompt([
@@ -88,7 +95,7 @@ function engineer() {
             name: "engineerGithub",
             message: "What is the Engineer's Github username?"
         }
-    ]).then(function(data) {
+    ]).then (function (data) {
         const engineer = new Engineer(data.engineerName, data.engineerId, data.engineerEmail, data.engineerGithub);
         teamMembers.push(engineer);
         team();
@@ -118,7 +125,10 @@ function intern() {
             name: "internSchool",
             message: "Where did the Intern go to school?"
         }
-    ]).then(function(data) {
+    ]).then (function (data) {
+        const intern = new Intern(data.iternName, data.internId, data.internEmail, data.internSchool);
+        teamMembers.push(intern);
+        team();
     });
 };
 
