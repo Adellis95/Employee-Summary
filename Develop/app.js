@@ -43,9 +43,10 @@ const questionsEmployee = [
 
 function manager() {
     console.log("Let's build your team!");
-    inquirer.prompt (questionsEmployee).then (function (data) {
+    inquirer.prompt (questionsEmployee).then(function (data) {
         const manager = new Manager(data.nameManager, data.managerId, data.emailManager, data.officeNumber);
         teamMembers.push(manager);
+        emptyId.push(data.managerId);
         team();
     });
 };
@@ -63,7 +64,7 @@ function team() {
                 "No more team members"
             ]
         }
-    ]).then(function(data) {
+    ]).then(function (data) {
         if (data.memberChoice === "Engineer") {
             engineer();
         } else if (data.memberChoice === "Intern") {
@@ -95,9 +96,10 @@ function engineer() {
             name: "engineerGithub",
             message: "What is the Engineer's Github username?"
         }
-    ]).then (function (data) {
+    ]).then(function (data) {
         const engineer = new Engineer(data.engineerName, data.engineerId, data.engineerEmail, data.engineerGithub);
         teamMembers.push(engineer);
+        emptyId.push(data.engineerId);
         team();
     });
 };
@@ -125,9 +127,10 @@ function intern() {
             name: "internSchool",
             message: "Where did the Intern go to school?"
         }
-    ]).then (function (data) {
+    ]).then(function (data) {
         const intern = new Intern(data.iternName, data.internId, data.internEmail, data.internSchool);
         teamMembers.push(intern);
+        emptyId.push(data.internId);
         team();
     });
 };
