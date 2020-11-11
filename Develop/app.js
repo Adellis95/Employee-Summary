@@ -58,10 +58,10 @@ function team() {
             ]
         }
     ]).then(function(data) {
-        if (data.memberChoice === "Engineer"){
-            // engineer function
-        } else if (data.memberChoice === "Intern"){
-            // intern function
+        if (data.memberChoice === "Engineer") {
+            engineer();
+        } else if (data.memberChoice === "Intern") {
+            intern();
         }
     });
 };
@@ -88,8 +88,39 @@ function engineer() {
             name: "engineerGithub",
             message: "What is the Engineer's Github username?"
         }
-    ])
-}
+    ]).then(function(data) {
+        const engineer = new Engineer(data.engineerName, data.engineerId, data.engineerEmail, data.engineerGithub);
+        teamMembers.push(engineer);
+        team();
+    });
+};
+
+
+function intern() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "internName",
+            message: "What is the Intern's name?"
+        },
+        {
+            type: "input",
+            name: "internId",
+            message: "What is the Intern's ID?"
+        },
+        {
+            type: "input",
+            name: "internEmail",
+            message: "What is the Intern's email?"
+        },
+        {
+            type: "input",
+            name: "internSchool",
+            message: "Where did the Intern go to school?"
+        }
+    ]).then(function(data) {
+    });
+};
 
 
 // Write code to use inquirer to gather information about the development team members,
