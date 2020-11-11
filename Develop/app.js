@@ -43,7 +43,7 @@ const questionsEmployee = [
 
 function manager() {
     console.log("Let's build your team!");
-    inquirer.prompt (questionsEmployee).then(function (data) {
+    inquirer.prompt(questionsEmployee).then(function(data) {
         const manager = new Manager(data.nameManager, data.managerId, data.emailManager, data.officeNumber);
         teamMembers.push(manager);
         emptyId.push(data.managerId);
@@ -64,12 +64,12 @@ function team() {
                 "No more team members"
             ]
         }
-    ]).then(function (data) {
-        if (data.memberChoice === "Engineer") {
+    ]).then(function(data) {
+        if(data.memberChoice === "Engineer") {
             engineer();
-        } else if (data.memberChoice === "Intern") {
+        }else if(data.memberChoice === "Intern") {
             intern();
-        }
+        }else(outputTeam());
     });
 };
 
@@ -96,7 +96,7 @@ function engineer() {
             name: "engineerGithub",
             message: "What is the Engineer's Github username?"
         }
-    ]).then(function (data) {
+    ]).then(function(data) {
         const engineer = new Engineer(data.engineerName, data.engineerId, data.engineerEmail, data.engineerGithub);
         teamMembers.push(engineer);
         emptyId.push(data.engineerId);
@@ -135,7 +135,7 @@ function intern() {
     });
 };
 
-
+manager();
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
