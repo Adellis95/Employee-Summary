@@ -57,6 +57,37 @@ function team() {
                 "No more team members"
             ]
         }
+    ]).then(function(data) {
+        if (data.memberChoice === "Engineer"){
+            // engineer function
+        } else if (data.memberChoice === "Intern"){
+            // intern function
+        }
+    });
+};
+
+function engineer() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "engineerName",
+            message: "What is the Engineer's name?"
+        },
+        {
+            type: "input",
+            name: "engineerId",
+            message: "What is the Engineer's ID?"
+        },
+        {
+            type: "input",
+            name: "engineerEmail",
+            message: "What is the Engineer's email?"
+        },
+        {
+            type: "input",
+            name: "engineerGithub",
+            message: "What is the Engineer's Github username?"
+        }
     ])
 }
 
