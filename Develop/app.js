@@ -36,6 +36,30 @@ const questionsEmployee = [
     }
 ];
 
+function manager() {
+    console.log("Let's build your team!");
+    inquirer.prompt(questionsEmployee).then(function(data) {
+        const manager = new Manager(data.nameManager, data.managerId, data.emailManager, data.officeNumber);
+        teamMembers.push(manager);
+        team();
+    });
+};
+
+function team() {
+    inquirer.prompt([
+        {
+            type: "list",
+            name: "memberChoice",
+            message: "Which team member would you like to add?",
+            choices: [
+                "Engineer",
+                "Intern",
+                "No more team members"
+            ]
+        }
+    ])
+}
+
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
