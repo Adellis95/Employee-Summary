@@ -10,7 +10,7 @@ Build a software engineering team generator command line application. The applic
 ## Table of Contents
 
 - [Requirements](#requirements)
-- [Demo](#demo)
+- [Demos](#demos)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Features](#features)
