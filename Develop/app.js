@@ -127,8 +127,8 @@ function intern() {
             name: "internSchool",
             message: "Where did the Intern go to school?"
         }
-    ]).then(function (data) {
-        const intern = new Intern(data.iternName, data.internId, data.internEmail, data.internSchool);
+    ]).then(function(data) {
+        const intern = new Intern(data.internName, data.internId, data.internEmail, data.internSchool);
         teamMembers.push(intern);
         emptyId.push(data.internId);
         team();
