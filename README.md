@@ -5,36 +5,60 @@
 
 ## Description
 
-words
+Build a software engineering team generator command line application. The application will prompt the user for information about the team manager and then information about the team members. The user can input any number of team members, and they may be a mix of engineers and interns. This assignment must also pass all unit tests. When the user has completed building the team, the application will create an HTML file that displays a nicely formatted team roster based on the information provided by the user.
 
 ## Table of Contents
 
 - [Requirements](#requirements)
-- [Screenrecord](#screenrecord)
+- [Demo](#demo)
 - [Installation](#installation)
 - [Usage](#usage)
-- [](#)
+- [Features](#features)
 - [License](#license)
 
 ## Requirements
 
-words
+- Functional application.
 
-## Screenrecord
+- GitHub repository with a unique name and a README describing the project.
 
-words
+- User can use the CLI to generate an HTML page that displays information about their team.
+
+- All tests must pass.
+
+## Demo
+
+![Test](tests.gif)
+
+![Demo](Node.gif)
 
 ## Installation
 
-words
+Clone Repo then run:
+
+- 'npm i' to install dependencies
 
 ## Usage
 
-words
+This command-line application dynamically generates a HTML from a user's input. The application will be invoked with the following command in the terminal:
 
-## Something
+- node app.js
 
-words
+The user will be prompted for Employee information.
+
+## Features
+
+Dependencies:
+
+- Inquirer
+- Path
+- fs
+
+Technologies:
+
+- Javascript
+- Node.js
+- CSS
 
 ## License
 
